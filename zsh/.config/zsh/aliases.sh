@@ -8,24 +8,26 @@
 alias ls="lsd --group-dirs=first -a"
 alias ls='ls --color=auto'
 if [ -e "/usr/bin/lsd" ];then
-	alias ls="lsd --group-dirs=first -aht"
+	alias ls="lsd --group-dirs=first -AhtSg"
+	alias ll="lsd --group-dirs=first -AhtSgl"
 else
 	alias ls='ls --color=auto -ath'
+	alias ls='ls --color=auto -lath'
 fi
 
 # aliases for cd
 alias ..="cd .."
 alias cdh="cd ~"
 alias doc="cd ~/Documents"
-alias dot="cd ~/.dotfiles"
-alias nvdot="cd ~/.dotfiles/nvim/.config/nvim/"
-alias idot="cd ~/.dotfiles/i3/.config/i3/"
-alias polydot="cd ~/.dotfiles/polybar/.config/polybar/"
-alias zdot="cd ~/.dotfiles/zsh/.config/zsh/"
+alias dot="cd ~/dot2025"
+alias nvdot="cd ~/dot2025/nvim/.config/nvim/"
+alias idot="cd ~/dot2025/i3/.config/i3/"
+alias polydot="cd ~/dot2025/polybar/.config/polybar/"
+alias zdot="cd ~/dot2025/zsh/.config/zsh/"
 alias config="cd ~/.config"
 alias cdhl="ccdl ~"
 alias docl="ccdl ~/Documents"
-alias dotl="ccdl ~/.dotfiles"
+alias dotl="ccdl ~/dot2025"
 alias configl="ccdl ~/.config"
 
 # general purpose aliases
