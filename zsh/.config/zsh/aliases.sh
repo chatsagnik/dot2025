@@ -29,6 +29,13 @@ alias cdhl="ccdl ~"
 alias docl="ccdl ~/Documents"
 alias dotl="ccdl ~/dot2025"
 alias configl="ccdl ~/.config"
+# Zotero Library
+if [ -e "~/Documents/Library/texmf/bibtex/bib" ];then
+  mkdir ~/Documents/Library/texmf/bibtex/bib
+  alias zotbib="ccdl ~/Documents/Library/texmf/bibtex/bib"
+else
+  alias zotbib="ccdl ~/Documents/Library/texmf/bibtex/bib"
+fi
 
 # general purpose aliases
 
