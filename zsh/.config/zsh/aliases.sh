@@ -1,13 +1,11 @@
 #######
 ## Aliases file
 #######
-# alias cd with zoxide if preferred....... 
-# alias cd="z"
 
 # replace ls with ls-deluxe if installed
 alias ls="lsd --group-dirs=first -a"
 alias ls='ls --color=auto'
-if [ -e "/usr/bin/lsd" ];then
+if [ ! -z $(which lsd) ];then
 	alias ls="lsd --group-dirs=first -AhtSg"
 	alias ll="lsd --group-dirs=first -AhtSgl"
 else
@@ -29,33 +27,17 @@ alias cdhl="ccdl ~"
 alias docl="ccdl ~/Documents"
 alias dotl="ccdl ~/dot2025"
 alias configl="ccdl ~/.config"
-# Zotero Library
-if [ -e "~/Documents/Library/texmf/bibtex/bib" ];then
-  mkdir ~/Documents/Library/texmf/bibtex/bib
-  alias zotbib="ccdl ~/Documents/Library/texmf/bibtex/bib"
-else
-  alias zotbib="ccdl ~/Documents/Library/texmf/bibtex/bib"
-fi
 
 # general purpose aliases
-
 alias upgrade='sudo pacman -Syu'
-alias pacin='sudo pacman -S'
-alias pacout='sudo pacman -R'
-alias paclean='sudo pacman -Sc'
+alias clean='pacman -Sc'
 alias zpath='echo -e ${PATH//:/\\n}'
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
-
 alias off="sudo poweroff"
 alias mkdir='mkdir -pv'
 alias cp="cp -riv"
 alias mv="mv -iv"
 alias soz="source ~/.zshrc"
 alias tree="ls --tree"
-alias hss="hugo server --noHTTPCache"
-alias dl="youtube-dl"
 
 # use trash instead of rm -rf
 trash () {
@@ -65,7 +47,6 @@ trash () {
 		echo $? && mkdir ~/.trash && tname="trash" && tname="trash.${1}" && mv $1 ~/.trash/$tname
 	fi
 }
-
 
 # cd and ls
 # alias for cd doesn't support arguments so we have to use a function
