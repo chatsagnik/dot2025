@@ -88,3 +88,5 @@ source <(fzf --zsh)
 alias fnv='nv $(fzf --preview="bat --color=always {}")'
 #use tab to select multiple files
 alias fmnv='nv $(fzf -m --preview="bat --color=always {}")'
+
+alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
